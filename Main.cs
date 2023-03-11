@@ -17,6 +17,17 @@ namespace BricksVR
 
     public class SingleBrick : MelonMod
     {
-        
+        public GameObject settingsButton;
+        public GameObject playButton;
+        public GameObject joinButton;
+
+        public override void OnSceneWasInitialized(int buildIndex, string sceneName)
+        {
+            playButton = GameObject.Find("MenuBoard/Main/CreateButton");
+            joinButton = GameObject.Find("MenuBoard/Main/JoinButton");
+            settingsButton = GameObject.Find("MenuBoard/Main/SettingsButton");
+
+            HandleMenu.HandleButtons(this);
+        }
     }
 }
