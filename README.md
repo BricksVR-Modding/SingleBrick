@@ -35,7 +35,7 @@ https://github.com/othneildrew/Best-README-Template
 
 ## How to install the mod
 
-For the bare essentials, check this [guide](https://github.com/zakmasood/BricksVRModding) on how to set up modding for BricksVR. Once you have done that, all you have to do is drag the latest DLL from the [releases](https://github.com/BricksVR-Modding/SingleBrick/releases) section into your `Mods` folder.
+For the bare essentials, check this [guide](https://github.com/BricksVR-Modding/SingleBrick) on how to set up modding for BricksVR. Once you have done that, all you have to do is drag the latest DLL from the [releases](https://github.com/BricksVR-Modding/SingleBrick/releases) section into your `Mods` folder.
 
 
 ## Acknowledgements
@@ -43,13 +43,13 @@ For the bare essentials, check this [guide](https://github.com/zakmasood/BricksV
 * [BricksVR Source Code](https://github.com/d12/bricksvr-game)
 * [Readme based off of Best README Template](https://github.com/othneildrew/Best-README-Template)
 
-[contributors-shield]: https://img.shields.io/github/contributors/zakmasood/BricksVRModding.svg?style=for-the-badge
-[contributors-url]: https://github.com/zakmasood/BricksVRModding/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/zakmasood/BricksVRModding.svg?style=for-the-badge
-[forks-url]: https://github.com/https://github.com/zakmasood/BricksVRModding/network/members
-[stars-shield]: https://img.shields.io/github/stars/zakmasood/BricksVRModding.svg?style=for-the-badge
-[stars-url]: https://github.com/zakmasood/BricksVRModdingstargazers
-[issues-shield]: https://img.shields.io/github/issues/zakmasood/BricksVRModding.svg?style=for-the-badge
-[issues-url]: https://github.com/zakmasood/BricksVRModding
-[license-shield]: https://img.shields.io/github/license/zakmasood/BricksVRModding.svg?style=for-the-badge
-[license-url]: https://github.com/zakmasood/BricksVRModding/blob/main/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/BricksVR-Modding/SingleBrick.svg?style=for-the-badge
+[contributors-url]: https://github.com/BricksVR-Modding/SingleBrick/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/BricksVR-Modding/SingleBrick.svg?style=for-the-badge
+[forks-url]: https://github.com/https://github.com/BricksVR-Modding/SingleBrick/network/members
+[stars-shield]: https://img.shields.io/github/stars/BricksVR-Modding/SingleBrick.svg?style=for-the-badge
+[stars-url]: https://github.com/BricksVR-Modding/SingleBrickstargazers
+[issues-shield]: https://img.shields.io/github/issues/BricksVR-Modding/SingleBrick.svg?style=for-the-badge
+[issues-url]: https://github.com/BricksVR-Modding/SingleBrick
+[license-shield]: https://img.shields.io/github/license/BricksVR-Modding/SingleBrick.svg?style=for-the-badge
+[license-url]: https://github.com/BricksVR-Modding/SingleBrick/blob/main/LICENSE
