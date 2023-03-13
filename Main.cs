@@ -21,6 +21,22 @@ namespace BricksVR
         public GameObject playButton;
         public GameObject joinButton;
 
+        public override void OnApplicationStart()
+        {
+            System.Action<string, string, LogType> act = HandleLog;
+            Application.add_logMessageReceived(act);
+        }
+
+        void HandleLog(string logString, string stackTrace, LogType type)
+        {
+            switch(type)
+            {
+                case LogType.Error:
+                    MelonLogger.Error(logString + "\n\n" + stackTrace);
+                    break;
+            }
+        }
+
         public override void OnSceneWasInitialized(int buildIndex, string sceneName)
         {
             playButton = GameObject.Find("MenuBoard/Main/CreateButton");

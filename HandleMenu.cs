@@ -15,6 +15,9 @@ namespace BricksVR
             GameObject playButton = instance.playButton;
             GameObject joinButton = instance.joinButton;
             GameObject settingsButton = instance.settingsButton;
+
+            GameObject.DestroyImmediate(playButton.GetComponent<Button>());
+            playButton.AddComponent<Button>();
             Button playButtonComponent = playButton.GetComponent<Button>();
 
             joinButton.SetActive(false);
@@ -29,9 +32,7 @@ namespace BricksVR
             Action action = () =>
                 MelonCoroutines.Start(HandlePlay());
 
-            playButtonComponent.onClick.RemoveAllListeners();
             playButtonComponent.onClick.AddListener(action);
-
         }
 
         public static IEnumerator HandlePlay()
@@ -44,11 +45,23 @@ namespace BricksVR
 
                 sessionManager.WarmOtherCaches();
                 BrickPrefabCache.GetInstance().GenerateCache();
-                yield return sessionManager.brickPickerMenu.WarmMenu();
+                sessionManager.brickPickerMenu.WarmMenu();
                 BrickColorMap.WarmColorDictionary();
                 
 
                 sessionManager.buttonInput.DisableMenuControls();
+
+                GameObject customModel = GameObject.Instantiate(Resources.Load<GameObject>("Custom VR Player"));
+                customModel.AddComponent<Scripts.Avatar>();
+                GameObject.Destroy(customModel.GetComponent<RealtimeTransform>());
+                GameObject.Destroy(customModel.GetComponent<RealtimeAvatar>());
+                GameObject.Destroy(customModel.GetComponent<RealtimeView>());
+
+                AvatarNicknameSync avatarSync = customModel.GetComponent<AvatarNicknameSync>();
+
+                avatarSync._isSelf = true;
+                avatarSync.nameText.enabled = false;
+                avatarSync.face.SetActive(false);
 
                 sessionManager.mainEnvironment.SetActive(true);
                 sessionManager.menuEnvironment.SetActive(false);
@@ -62,12 +75,6 @@ namespace BricksVR
                 sessionManager.joystickLocomotion.enabled = true;
 
                 sessionManager._didConnectToRoom = true;
-                GameObject localHead = sessionManager.realtimeGameobject.GetComponent<RealtimeAvatarManager>().localAvatar.head.gameObject;
-                Renderer[] localHeadRenderers = localHead.GetComponentsInChildren<Renderer>();
-                foreach (Renderer r in localHeadRenderers)
-                {
-                    r.enabled = false;
-                }
             }
         }
     }

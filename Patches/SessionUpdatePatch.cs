@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEngine.UI;
+using UnityEngine;
 using HarmonyLib;
 
 namespace BricksVR.Patches
@@ -8,7 +9,7 @@ namespace BricksVR.Patches
     {
         public static bool Prefix(NormalSessionManager __instance)
         {
-            if (__instance.mainEnvironment.active && (OVRInput.GetUp(OVRInput.Button.Start, OVRInput.Controller.Touch) || Input.GetKeyUp(KeyCode.M)))
+            if (__instance.mainEnvironment.active && OVRInput.GetUp(OVRInput.Button.Start, OVRInput.Controller.Touch))
             {
                 if (!__instance._inGameMenuUp)
                 {
@@ -28,8 +29,11 @@ namespace BricksVR.Patches
                     __instance.teleporterLeftHand.SetActive(false);
                     __instance.teleporterRightHand.SetActive(false);
 
-                    __instance._avatarManager.localAvatar.leftHand.gameObject.SetActive(false);
-                    __instance._avatarManager.localAvatar.rightHand.gameObject.SetActive(false);
+                    Object.FindObjectOfType<Scripts.Avatar>()?.customLeft?.gameObject?.SetActive(false);
+                    Object.FindObjectOfType<Scripts.Avatar>()?.customRight?.gameObject?.SetActive(false);
+
+                    GameObject.Find("MenuBoard/InGame Main/RoomOptionsButton").GetComponent<Button>().interactable = false;
+                    GameObject.Find("MenuBoard/InGame Main/PlayersMenu").GetComponent<Button>().interactable = false;
                 }
                 else
                 {
@@ -43,8 +47,8 @@ namespace BricksVR.Patches
                     __instance.menuLeftHand.SetActive(false);
                     __instance.menuRightHand.SetActive(false);
 
-                    __instance._avatarManager.localAvatar.leftHand.gameObject.SetActive(true);
-                    __instance._avatarManager.localAvatar.rightHand.gameObject.SetActive(true);
+                    GameObject.FindObjectOfType<Scripts.Avatar>()?.customLeft?.gameObject?.SetActive(true);
+                    GameObject.FindObjectOfType<Scripts.Avatar>()?.customRight?.gameObject?.SetActive(true);
                 }
             }
 
