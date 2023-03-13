@@ -52,4 +52,4 @@ For the bare essentials, check this [guide](https://github.com/BricksVR-Modding/
 [issues-shield]: https://img.shields.io/github/issues/BricksVR-Modding/SingleBrick.svg?style=for-the-badge
 [issues-url]: https://github.com/BricksVR-Modding/SingleBrick
 [license-shield]: https://img.shields.io/github/license/BricksVR-Modding/SingleBrick.svg?style=for-the-badge
-[license-url]: https://github.com/BricksVR-Modding/SingleBrick/blob/main/LICENSE
+[license-url]: https://github.com/BricksVR-Modding/SingleBrick/blob/master/LICENSE.md
