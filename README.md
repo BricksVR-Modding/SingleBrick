@@ -35,7 +35,7 @@ https://github.com/othneildrew/Best-README-Template
 
 ## How to install the mod
 
-For the bare essentials, check this [guide](https://github.com/BricksVR-Modding/SingleBrick) on how to set up modding for BricksVR. Once you have done that, all you have to do is drag the latest DLL from the [releases](https://github.com/BricksVR-Modding/SingleBrick/releases) section into your `Mods` folder.
+For the bare essentials, check this [guide](https://github.com/zakmasood/BricksVRModding) on how to set up modding for BricksVR. Once you have done that, all you have to do is drag the latest DLL from the [releases](https://github.com/BricksVR-Modding/SingleBrick/releases) section into your `Mods` folder.
 
 
 ## Acknowledgements
